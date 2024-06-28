@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
             Audio Alchemist
           </h1>
           <p className="text-xl sm:text-2xl mb-8 text-gray-300">
-            We're building an auto sampler for producers to get juicy sample loops out of any song.
+            We&apos;re building an auto sampler for producers to get juicy sample loops out of any song.
           </p>
           <Button
             asChild
