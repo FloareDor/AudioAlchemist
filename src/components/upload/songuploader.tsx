@@ -76,8 +76,8 @@ const SongUploader: React.FC = () => {
       for (let i = 0; i < bufferLength; i++) {
         const barHeight = dataArray[i] / 2;
         const gradient = ctx.createLinearGradient(0, 0, 0, canvasElement.height);
-        gradient.addColorStop(0, '#EECDA3');
-        gradient.addColorStop(1, '#EF629F');
+        gradient.addColorStop(0, '#01FE19');
+        gradient.addColorStop(1, '#093100');
         ctx.fillStyle = gradient;
         ctx.fillRect(x, canvasElement.height - barHeight, barWidth, barHeight);
         x += barWidth + 1;
@@ -130,7 +130,7 @@ const SongUploader: React.FC = () => {
   return (
     <div className="bg-gradient-to-br from-black to-black min-h-screen text-white p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-6xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-one to-two">
+        <h1 className="text-6xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-one to-middle">
           Audio Alchemist
         </h1>
         
@@ -144,10 +144,10 @@ const SongUploader: React.FC = () => {
           />
           <label
             htmlFor="file-upload"
-            className={`flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer transition-all duration-300 ${
+            className={`flex flex-col items-center justify-center w-full h-64 border-2 rounded-lg cursor-pointer transition-all duration-300 ${
               isDragging
-                ? 'border-two bg-gray-700'
-                : 'border-gray-300 bg-gray-800 hover:bg-gray-700'
+                ? 'border-two bg-middle'
+                : 'border-gray-300 bg-black hover:border-middle'
             }`}
             onDragEnter={handleDragEnter}
             onDragOver={handleDragOver}
@@ -163,7 +163,7 @@ const SongUploader: React.FC = () => {
             <Button 
               onClick={handleSample} 
               disabled={isLoading}
-              className="mt-4 w-full bg-gradient-to-r from-one to-pink-600 hover:from-two hover:to-one text-white font-bold py-3 rounded-lg transition-all duration-300"
+              className="mt-4 w-full bg-gradient-to-r from-two to-middle hover:from-two hover:to-middle hover:scale-x-[102%] text-white font-bold py-3 rounded-lg transition-all duration-300"
             >
               {isLoading ? 'Sampling...' : 'Transmute Audio'}
             </Button>
@@ -171,7 +171,7 @@ const SongUploader: React.FC = () => {
         </div>
 
         {file && (
-          <div className="mb-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="mb-12 bg-black rounded-lg p-6 shadow-lg">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-semibold">Original Elixir</h2>
               <Button
@@ -190,7 +190,7 @@ const SongUploader: React.FC = () => {
         )}
 
         {sampledFile && (
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="bg-black rounded-lg p-6 shadow-lg">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-semibold">Transmuted Essence</h2>
               <Button

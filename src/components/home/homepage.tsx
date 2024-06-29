@@ -7,9 +7,9 @@ const HomePage: React.FC = () => {
   return (
     <div className=" pt-[7.5%] px-4 bg-black text-white relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      <div className="absolute inset-0 z-0 opacity-10">
         <Image
-          src="/path-to-your-image.jpg"  // Replace with your image path
+          src="/images/idea.png"
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
           </p>
           <Button
             asChild
-            className="bg-gradient-to-r from-one to-two hover:scale-[105%] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
+            className="bg-gradient-to-r from-[#01fe1a7a] via-two to-middle hover:scale-[105%] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
           >
             <Link href="/upload">Try It Now</Link>
           </Button>
@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
 
 const FeatureCard: React.FC<{ title: string; description: string }> = ({ title, description }) => (
 	<Link href='/'>
-  <div className="bg-[#341615] hover:bg-[#8f4a48] p-6 rounded-lg shadow-lg">
+  <div className="bg-middle opacity-80 hover:opacity-95 hover:scale-[105%] hover:bg-two p-6 rounded-lg shadow-lg transition-all duration-300">
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-100">{description}</p>
 		</div>
