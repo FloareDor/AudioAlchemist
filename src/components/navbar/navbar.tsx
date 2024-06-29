@@ -12,7 +12,11 @@ const Navbar = () => {
 						<span className="text-md text-transparent bg-clip-text bg-gradient-to-br from-one to-two ${inter.className}">Audio Alchemist</span>
 					</div>
 				</Link>
-				<Link href={'/contact'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Contact</span> </Link>
+				<div className="flex flex-row justify-normal gap-4">
+					<Link href={'/contact'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Contact</span> </Link>
+					<Link href={'/idea'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Idea</span> </Link>
+				</div>
+				
 			</div>
 		</div>
 	)
