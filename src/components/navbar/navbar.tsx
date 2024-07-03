@@ -15,6 +15,7 @@ const Navbar = () => {
 				<div className="flex flex-row justify-normal gap-4">
 					<Link href={'/contact'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Contact</span> </Link>
 					<Link href={'/idea'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Idea</span> </Link>
+					<Link href={'/compositions'}> <span className="text-transparent bg-clip-text bg-gradient-to-br from-one to-two text-sm">Compositions</span> </Link>
 				</div>
 				
 			</div>
