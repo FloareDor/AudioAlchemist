@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AudioPlayer from 'react-h5-audio-player';
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 interface AudioSet {
@@ -27,8 +27,8 @@ const Compositions: React.FC = () => {
           <div key={set.id} className="mb-12 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg p-6 shadow-lg">
             <h2 className="text-2xl font-semibold mb-4 text-one">Set {set.id}</h2>
             <div className="space-y-4">
-              {['source', 'output', 'composition'].map((type) => {
-                const audioSrc = set[type as keyof AudioSet];
+              {(['source', 'output', 'composition'] as const).map((type) => {
+                const audioSrc = set[type];
                 return (
                   <div key={type} className="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">
@@ -38,8 +38,15 @@ const Compositions: React.FC = () => {
                       src={audioSrc}
                       onPlay={() => setPlayingAudio(audioSrc)}
                       autoPlayAfterSrcChange={false}
-                      customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
-                      customProgressBarSection={['PROGRESS_BAR', 'CURRENT_TIME', 'DURATION']}
+                      customControlsSection={[
+                        RHAP_UI.MAIN_CONTROLS,
+                        RHAP_UI.VOLUME_CONTROLS,
+                      ]}
+                      customProgressBarSection={[
+                        RHAP_UI.PROGRESS_BAR,
+                        RHAP_UI.CURRENT_TIME,
+                        RHAP_UI.DURATION,
+                      ]}
                       layout="horizontal-reverse"
                       style={{ background: 'transparent', boxShadow: 'none' }}
                     />
